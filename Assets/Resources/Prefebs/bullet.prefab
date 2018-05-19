@@ -142,6 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   create: {fileID: 8300000, guid: e5ffe5ad56ed84f80b79cf081c6d0209, type: 3}
   destory: {fileID: 8300000, guid: b00177400ce884a1f8777420c5b09e13, type: 3}
+  effectObject: {fileID: 158224, guid: 08af55dd04af6094389b71d80b600049, type: 2}
 --- !u!136 &136733732218518016
 CapsuleCollider:
   m_ObjectHideFlags: 1

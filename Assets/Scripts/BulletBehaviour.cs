@@ -13,6 +13,9 @@ namespace TNW
         [SerializeField]
         private AudioClip destory;
 
+        [SerializeField]
+        private GameObject effectObject;
+
         private float speed = 20.0f;
 
         private float lifetime = 1.0f;
@@ -41,12 +44,20 @@ namespace TNW
             {
                 Destroy(other.gameObject);
                 Destroy(gameObject);
+                CreateEffect();
             }
         }
 
         private void OnDestroy()
         {
             SoundManger.Instance.PlaySe(destory.name);
+        }
+
+        private void CreateEffect()
+        {
+            GameObject effect = Instantiate(effectObject, transform.position, Quaternion.identity);
+            ParticleSystem particleSystem = effect.GetComponent<ParticleSystem>();
+            Destroy(effect, particleSystem.duration);
         }
     }
 }
