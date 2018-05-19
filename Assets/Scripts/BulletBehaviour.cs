@@ -42,7 +42,7 @@ namespace TNW
             {
 #if STUDENT
 
-            // 当たったら弾と対照オブジェクトを消す
+            // 当たったら弾と対象オブジェクトを消す
 
 #else
                 Destroy(other.gameObject);
