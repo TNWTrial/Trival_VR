@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Komugi
+namespace TNW
 {
     public class SoundManger : SingletonMonoBehaviour<SoundManger>
     {
@@ -76,7 +76,7 @@ namespace Komugi
             }
 
             //bgmOff = DataManager.Instance.LoadBGMOption() == 1;
-            bgmSource.volume = bgmOff ? 0f : 1f;
+            bgmSource.volume = 1f;
             //seOff = DataManager.Instance.LoadSEOption() == 1;
         }
 

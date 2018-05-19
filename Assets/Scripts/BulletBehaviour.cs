@@ -7,14 +7,21 @@ namespace TNW
     public class BulletBehaviour : MonoBehaviour
     {
 
-        private float speed = 10.0f;
+        [SerializeField]
+        private AudioClip create;
 
-        private float lifetime = 3.0f;
+        [SerializeField]
+        private AudioClip destory;
+
+        private float speed = 20.0f;
+
+        private float lifetime = 1.0f;
 
         // Use this for initialization
         void Start()
         {
             Invoke("DestroyObject", lifetime);
+            SoundManger.Instance.PlaySe(create.name);
         }
 
         // Update is called once per frame
@@ -35,6 +42,11 @@ namespace TNW
                 Destroy(other.gameObject);
                 Destroy(gameObject);
             }
+        }
+
+        private void OnDestroy()
+        {
+            SoundManger.Instance.PlaySe(destory.name);
         }
     }
 }

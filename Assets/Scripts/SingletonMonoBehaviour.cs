@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Komugi
+namespace TNW
 {
     public class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour
     {
