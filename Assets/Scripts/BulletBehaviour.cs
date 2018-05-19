@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace TNW
 {
@@ -42,9 +40,15 @@ namespace TNW
         {
             if (other.tag == "Destructable")
             {
+#if STUDENT
+
+            // 当たったら弾と対照オブジェクトを消す
+
+#else
                 Destroy(other.gameObject);
                 Destroy(gameObject);
                 CreateEffect();
+#endif
             }
         }
 

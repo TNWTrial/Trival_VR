@@ -77,6 +77,11 @@ namespace TNW
 
         void UpdateCameraPosition()
         {
+#if STUDENT
+
+            // カメラのポジションを更新
+
+#else
             float cameraY = distance * Mathf.Sin(elevation * Mathf.Deg2Rad);
 
             float hypotenuseXZ = distance * Mathf.Cos(elevation * Mathf.Deg2Rad);
@@ -85,11 +90,19 @@ namespace TNW
             float cameraX = hypotenuseXZ * Mathf.Cos(azimuth * Mathf.Deg2Rad);
 
             cameraPosition = new Vector3(cameraX, cameraY, cameraZ);
+#endif
+
         }
 
         void UpdateCameraRotation()
         {
+#if STUDENT
+
+            // カメラのローテーションを更新
+
+#else
             transform.LookAt(target);
+#endif
         }
 
         float RoundDeg(float angle)

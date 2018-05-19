@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -451,7 +451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57101aaa92a186d42b7fec1fffe1b388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletObject: {fileID: 1155873303962386, guid: 061d7c2233b5cc24b92f2e31eb28bff8,
+  BulletObject: {fileID: 1363747872242466, guid: ae14e8881b254e24b85a90f8ddf21d57,
     type: 2}
 --- !u!114 &1142565095
 MonoBehaviour:
@@ -482,7 +482,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 1.05, z: 0}
 --- !u!1 &1241487769
 GameObject:
   m_ObjectHideFlags: 0

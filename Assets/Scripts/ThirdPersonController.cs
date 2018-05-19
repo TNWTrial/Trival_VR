@@ -13,17 +13,37 @@ namespace TNW
 
         private CharacterController characterController;
 
+#if STUDENT
+
+        // Shootスクリプトの定義
+        
+
+        // アニメーターの定義
+
+#else
+        private Shoot shoot;
         private Animator animator;
+#endif
 
 	    // Use this for initialization
 	    void Start ()
         {
             characterController = GetComponent<CharacterController>();
+
+#if STUDENT
+
+            // Shootスクリプトの初期化
+            
+            // アニメーターの初期化
+
+#else
+            shoot = GetComponent<Shoot>();
             animator = GetComponent<Animator>();
+#endif
         }
-	
-	    // Update is called once per frame
-	    void Update ()
+
+        // Update is called once per frame
+        void Update ()
         {
             Vector3 forward = viewCamera.transform.forward;
             forward.y = 0;
@@ -36,6 +56,15 @@ namespace TNW
 
             Vector3 direction = horizontal * right + vertical * forward;
 
+#if STUDENT
+
+            // 移動処理
+
+
+            // 弾を発射する処理
+
+
+#else
             characterController.Move(direction * speed * Time.deltaTime);
 
             if (direction != Vector3.zero)
@@ -44,7 +73,15 @@ namespace TNW
             }
 
             animator.SetFloat("Speed", direction.magnitude);
-            
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                shoot.Shooting();
+                animator.Play("robot_shot");
+            }
+
+#endif
+
         }
     }
 }
