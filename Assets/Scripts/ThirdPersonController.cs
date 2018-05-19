@@ -13,11 +13,13 @@ namespace TNW
 
         private CharacterController characterController;
 
+        private Animator animator;
 
 	    // Use this for initialization
 	    void Start ()
         {
             characterController = GetComponent<CharacterController>();
+            animator = GetComponent<Animator>();
         }
 	
 	    // Update is called once per frame
@@ -33,12 +35,15 @@ namespace TNW
             float vertical = Input.GetAxis("Vertical");
 
             Vector3 direction = horizontal * right + vertical * forward;
+
             characterController.Move(direction * speed * Time.deltaTime);
 
             if (direction != Vector3.zero)
             {
                 transform.rotation = Quaternion.LookRotation(direction);
             }
+
+            animator.SetFloat("Speed", direction.magnitude);
             
         }
     }

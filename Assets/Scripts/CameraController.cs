@@ -30,7 +30,7 @@ namespace TNW
         /// <summary>
         /// カメラの回転スピード
         /// </summary>
-        private float rotateSpeed = 0.1f;
+        private float rotateSpeed = 0.2f;
 
         /// <summary>
         /// カメラの相対座標
