@@ -64,6 +64,8 @@ namespace TNW
             // 弾を発射する処理
 
 
+            // 歩きアニメーションを更新
+
 #else
             characterController.Move(direction * speed * Time.deltaTime);
 
@@ -71,14 +73,14 @@ namespace TNW
             {
                 transform.rotation = Quaternion.LookRotation(direction);
             }
-
-            animator.SetFloat("Speed", direction.magnitude);
-
+            
             if (Input.GetMouseButtonDown(0))
             {
                 shoot.Shooting();
                 animator.Play("robot_shot");
             }
+
+            animator.SetFloat("Speed", direction.magnitude);
 
 #endif
 
